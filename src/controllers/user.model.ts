@@ -13,7 +13,7 @@ const pool = new Pool({
   connectionTimeoutMillis: 2000,
 });
 
-const UserModel = {
+export default {
   async getUserByName(username: string) {
     const query: string = "SELECT * FROM users WHERE username = $1";
     const values : string[] = [username];
@@ -133,5 +133,3 @@ const UserModel = {
   }
 }
 
-// Export both the pool and the function
-export { pool, UserModel };
